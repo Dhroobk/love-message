@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="as">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For Dhun ❤️</title>
+    <title>Chintu's Question 😂</title>
 
     <style>
         * {
@@ -15,68 +15,79 @@
         body {
             margin: 0;
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
+
             font-family: Arial, sans-serif;
+            text-align: center;
 
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            background: linear-gradient(135deg, #667eea, #764ba2);
 
-            overflow: hidden;
+            color: white;
         }
 
         .box {
             width: 90%;
             max-width: 550px;
+
             padding: 40px 25px;
 
             background: rgba(255, 255, 255, 0.18);
+
             border-radius: 30px;
 
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 
-            color: white;
+            backdrop-filter: blur(10px);
         }
 
-        .heart {
-            font-size: 80px;
+        .emoji {
+            font-size: 75px;
 
-            animation: heartbeat 1.2s infinite;
+            animation: bounce 1.5s infinite;
         }
 
-        @keyframes heartbeat {
-            0% {
-                transform: scale(1);
+        @keyframes bounce {
+
+            0%, 100% {
+                transform: translateY(0);
             }
 
             50% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
+                transform: translateY(-12px);
             }
         }
 
         h1 {
-            font-size: 42px;
-            margin: 15px 0;
+            font-size: 38px;
+            margin-bottom: 25px;
         }
 
-        p {
-            font-size: 24px;
-            line-height: 1.5;
+        .question {
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 30px;
         }
 
         button {
+            display: block;
+
+            width: 90%;
+
+            max-width: 400px;
+
+            margin: 15px auto;
+
+            padding: 16px;
+
             border: none;
-            padding: 15px 30px;
-            margin: 10px;
 
             border-radius: 30px;
 
             font-size: 20px;
+
             font-weight: bold;
 
             cursor: pointer;
@@ -85,50 +96,34 @@
         }
 
         button:hover {
-            transform: scale(1.1);
+            transform: scale(1.06);
         }
 
-        .yes {
-            background: #ff1744;
+        .option-a {
+            background: #00e676;
             color: white;
         }
 
-        .no {
-            background: white;
-            color: #ff1744;
+        .option-b {
+            background: #ff9800;
+            color: white;
         }
 
-        .hidden {
+        .result {
             display: none;
         }
 
-        .small {
-            font-size: 20px;
+        .result h2 {
+            font-size: 45px;
         }
 
-        .back {
-            background: white;
-            color: #ff4081;
-        }
-
-        .floating-heart {
-            position: fixed;
-            bottom: -50px;
+        .result p {
             font-size: 25px;
-
-            animation: floatUp 5s linear forwards;
         }
 
-        @keyframes floatUp {
-            from {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            to {
-                transform: translateY(-110vh);
-                opacity: 0;
-            }
+        .again {
+            background: white;
+            color: #764ba2;
         }
     </style>
 </head>
@@ -137,83 +132,76 @@
 
     <div class="box">
 
-        <!-- FIRST MESSAGE -->
+        <!-- QUESTION -->
 
         <div id="question">
 
-            <div class="heart">❤️</div>
+            <div class="emoji">
+                😂
+            </div>
 
-            <h1>Hey Dhun 😊</h1>
+            <h1>Hey Chintu! 😜</h1>
 
-            <p>
-                I miss you 🥺
-            </p>
+            <div class="question">
+                Ki krisa? 🤔
+            </div>
 
-            <p>
-                <b>Do you miss me too?</b> ❤️
-            </p>
-
-            <button class="yes" onclick="yesAnswer()">
-                YES ❤️
+            <button class="option-a" onclick="optionA()">
+                A — Mal khai ghumolu 😴
             </button>
 
-            <button class="no" onclick="noAnswer()">
-                NO 😜
-            </button>
-
-        </div>
-
-
-        <!-- YES MESSAGE -->
-
-        <div id="yesMessage" class="hidden">
-
-            <div class="heart">🥰❤️</div>
-
-            <h1>Yayyyy! 😍</h1>
-
-            <p>
-                I knew you would say YES! ❤️
-            </p>
-
-            <p>
-                Now my heart is smiling again 🥺💕
-            </p>
-
-            <p>
-                <b>Now you smile too 😊</b>
-            </p>
-
-            <button class="back" onclick="restart()">
-                Again? 😜
+            <button class="option-b" onclick="optionB()">
+                B — Vat khalu de aklai 😂
             </button>
 
         </div>
 
 
-        <!-- NO MESSAGE -->
+        <!-- OPTION A -->
 
-        <div id="noMessage" class="hidden">
+        <div id="answerA" class="result">
 
-            <div class="heart">😂❤️</div>
+            <div class="emoji">
+                😎🔥
+            </div>
 
-            <h1>Ohhh... NO? 😜</h1>
+            <h2>MJAAAAAAA 😂🔥</h2>
 
             <p>
-                Okay, I'll pretend<br>
-                I didn't see that! 🙈
+                Mal khai ghumolu nki? 😴😂
             </p>
 
             <p>
-                But I still miss you ❤️🥺
+                Life t aru ki lage! 😎
+            </p>
+
+            <button class="again" onclick="again()">
+                Akou Answer De 😜
+            </button>
+
+        </div>
+
+
+        <!-- OPTION B -->
+
+        <div id="answerB" class="result">
+
+            <div class="emoji">
+                😂🍚
+            </div>
+
+            <h2>Kali Khaba Lgbo! 😂</h2>
+
+            <p>
+                Aklai vat khai asa? 😭😂
             </p>
 
             <p>
-                <b>Now smile a little 😊</b>
+                Kali muk logot khaba lagbo! 😜🍚
             </p>
 
-            <button class="back" onclick="restart()">
-                Try Again 😜
+            <button class="again" onclick="again()">
+                Akou Answer De 😜
             </button>
 
         </div>
@@ -223,57 +211,29 @@
 
     <script>
 
-        function yesAnswer() {
+        function optionA() {
 
-            document.getElementById("question").classList.add("hidden");
+            document.getElementById("question").style.display = "none";
 
-            document.getElementById("yesMessage").classList.remove("hidden");
-
-            createHearts();
+            document.getElementById("answerA").style.display = "block";
         }
 
 
-        function noAnswer() {
+        function optionB() {
 
-            document.getElementById("question").classList.add("hidden");
+            document.getElementById("question").style.display = "none";
 
-            document.getElementById("noMessage").classList.remove("hidden");
-
-            createHearts();
+            document.getElementById("answerB").style.display = "block";
         }
 
 
-        function restart() {
+        function again() {
 
-            document.getElementById("yesMessage").classList.add("hidden");
+            document.getElementById("answerA").style.display = "none";
 
-            document.getElementById("noMessage").classList.add("hidden");
+            document.getElementById("answerB").style.display = "none";
 
-            document.getElementById("question").classList.remove("hidden");
-        }
-
-
-        function createHearts() {
-
-            for (let i = 0; i < 15; i++) {
-
-                let heart = document.createElement("div");
-
-                heart.className = "floating-heart";
-
-                heart.innerHTML = "❤️";
-
-                heart.style.left = Math.random() * 100 + "vw";
-
-                heart.style.animationDuration =
-                    (3 + Math.random() * 3) + "s";
-
-                document.body.appendChild(heart);
-
-                setTimeout(() => {
-                    heart.remove();
-                }, 6000);
-            }
+            document.getElementById("question").style.display = "block";
         }
 
     </script>
